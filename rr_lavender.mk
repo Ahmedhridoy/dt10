@@ -12,24 +12,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from lavender device
 $(call inherit-product, device/xiaomi/lavender/device.mk)
 
-# Inherit some common Corvus stuff.
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+# Inherit some common rr stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
-# lawnchair
-$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
-
-# Charging Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+BUILD_RR_WALLPAPERS := true
+# Pixel-charging
 USE_PIXEL_CHARGING := true
+TARGET_USES_BLUR := false
+TARGET_WITH_BLUR := false
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := nad_lavender
+PRODUCT_NAME := rr_lavender
 PRODUCT_DEVICE := lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=lavender \
-    PRODUCT_NAME=lavender
+    TARGET_DEVICE="lavender" \
+    PRODUCT_NAME="lavender" \
+    PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys"
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+BUILD_FINGERPRINT :="google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
