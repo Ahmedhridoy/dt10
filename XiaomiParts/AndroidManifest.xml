@@ -1,34 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<!-- Copyright (C) 2018 The Xiaomi-SDM660 Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.settings.device"
-    android:sharedUserId="android.uid.system">
-
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
-    <uses-sdk android:minSdkVersion="27" />
-
-    <application
-        android:label="@string/advanced_settings"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xiaomi.parts"
     android:sharedUserId="android.uid.system">
@@ -46,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/CustomOptionsTheme">
 
->>>>>>> ae669e0 (lavender: SQUASHED commits)
         <receiver
             android:name=".BootReceiver"
             android:defaultToDeviceProtectedStorage="true"
@@ -55,9 +24,6 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-<<<<<<< HEAD
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-=======
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -67,60 +33,32 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
->>>>>>> ae669e0 (lavender: SQUASHED commits)
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
         </receiver>
-<<<<<<< HEAD
-
-        <activity
-            android:name=".DeviceSettingsActivity"
-            android:exported="false"
-            android:icon="@drawable/round_build_24"
-            android:label="@string/advanced_settings"
-            android:launchMode="singleTask">
-=======
         <activity
             android:name=".DeviceSettingsActivity"
             android:icon="@drawable/ic_mi"
             android:launchMode="singleTask"
             android:label="@string/xiaomi_parts_title">
->>>>>>> ae669e0 (lavender: SQUASHED commits)
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
-<<<<<<< HEAD
-
-=======
->>>>>>> ae669e0 (lavender: SQUASHED commits)
             <meta-data
                 android:name="com.android.settings.dismiss"
                 android:value="9,13,30" />
             <meta-data
-<<<<<<< HEAD
-=======
                 android:name="com.android.settings.bg.hint"
                 android:resource="@color/xiaomi_parts_background" />
             <meta-data
->>>>>>> ae669e0 (lavender: SQUASHED commits)
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data
                 android:name="com.android.settings.summary"
-<<<<<<< HEAD
-                android:resource="@string/advanced_settings_summary" />
-        </activity>
-
-        <activity
-            android:name=".kcal.KCalSettingsActivity"
-            android:exported="false"
-            android:label="@string/advanced_settings_kcal">
-
-=======
                 android:resource="@string/xiaomi_parts_summary" />
         </activity>
 
@@ -130,7 +68,6 @@
             android:exported="false"
             android:theme="@style/CustomOptionsTheme"
             android:label="@string/advanced_settings_kcal">
->>>>>>> ae669e0 (lavender: SQUASHED commits)
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -138,16 +75,10 @@
         </activity>
 
         <service
-<<<<<<< HEAD
-            android:name=".PerformanceTileService"
-            android:icon="@drawable/spectrum_balance"
-            android:label="@string/spectrum_balance"
-=======
             android:name=".XiaomiPartsTile"
             android:enabled="true"
             android:icon="@drawable/ic_mi"
             android:label="@string/xiaomi_parts_title"
->>>>>>> ae669e0 (lavender: SQUASHED commits)
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -155,11 +86,6 @@
         </service>
 
         <service
-<<<<<<< HEAD
-            android:name=".DiracService"
-            android:enabled="true"
-            android:stopWithTask="false" />
-=======
             android:name=".log.LogTile"
             android:icon="@drawable/ic_qs_log"
             android:label="@string/quick_settings_log_tile_label"
@@ -189,6 +115,5 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
->>>>>>> ae669e0 (lavender: SQUASHED commits)
     </application>
 </manifest>
