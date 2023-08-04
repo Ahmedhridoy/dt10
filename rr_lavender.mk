@@ -18,22 +18,21 @@ $(call inherit-product, vendor/rr/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_FACE_UNLOCK_SUPPORTED := true
 BUILD_RR_WALLPAPERS := true
-# Pixel-charging
-USE_PIXEL_CHARGING := true
-TARGET_USES_BLUR := false
-TARGET_WITH_BLUR := false
 
-# Device identifier. This must come after all inclusions.
+# Build Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+        TARGET_DEVICE="lavender" \
+        PRODUCT_NAME="lavender" \
+	PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys" 
+
+# Device identifier
 PRODUCT_NAME := rr_lavender
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7
-PRODUCT_MANUFACTURER := Xiaomi
+
+TARGET_VENDOR_PRODUCT_NAME := lavender
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="lavender" \
-    PRODUCT_NAME="lavender" \
-    PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys"
-
-BUILD_FINGERPRINT :="google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
